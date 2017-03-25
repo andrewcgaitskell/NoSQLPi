@@ -1,1 +1,27 @@
 mongoimport --db streets --collection data --drop --file HE_HighwayBoundary_v3_3_1.geojson
+
+gave the following errors
+
+
+
+-----------
+
+mongoimport -d streets -c data --file HE_HighwayBoundary_v3_3_1.geojson --jsonArray -- did not work
+
+-------------
+
+useful commands
+
+use streets
+show collections
+
+db.data.count()
+
+db.data.find().limit(10)
+db.data.getIndexes()
+
+db.data.distinct( "properties" )
+db.data.distinct( "Category" )
+
+quit()
+ 
