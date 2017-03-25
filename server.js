@@ -1,11 +1,23 @@
 var http = require('http');
 var fs = require('fs');
 var server = http.createServer(function (req, res) {
-    displayForm(res);
+    //displayForm(res);
+    displayMap(res);
 });
 
 function displayForm(res) {
     fs.readFile('form.html', function (err, data) {
+        res.writeHead(200, {
+            'Content-Type': 'text/html',
+                'Content-Length': data.length
+        });
+        res.write(data);
+        res.end();
+    });
+}
+
+function displayMap(res) {
+    fs.readFile('map.html', function (err, data) {
         res.writeHead(200, {
             'Content-Type': 'text/html',
                 'Content-Length': data.length
