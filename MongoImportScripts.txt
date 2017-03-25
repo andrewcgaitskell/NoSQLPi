@@ -1,3 +1,7 @@
+at pi command line:
+
+ogr2ogr -f GeoJSON -t_srs crs:84 "HE_HighwayBoundary_v3_3_1.geojson" "HE_HighwayBoundary_v3_3_1.shp"
+
 mongoimport --db streets --collection data --drop --file HE_HighwayBoundary_v3_3_1.geojson
 
 gave the following errors
